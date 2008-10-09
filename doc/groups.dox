@@ -40,31 +40,9 @@ the diverging requirements of the possible users.  In order to save on
 running time or on memory usage, some structures may fail to provide
 some graph features like arc/edge or node deletion.
 
-Alteration of standard containers need a very limited number of
-operations, these together satisfy the everyday requirements.
-In the case of graph structures, different operations are needed which do
-not alter the physical graph, but gives another view. If some nodes or
-arcs have to be hidden or the reverse oriented graph have to be used, then
-this is the case. It also may happen that in a flow implementation
-the residual graph can be accessed by another algorithm, or a node-set
-is to be shrunk for another algorithm.
-LEMON also provides a variety of graphs for these requirements called
-\ref graph_adaptors "graph adaptors". Adaptors cannot be used alone but only
-in conjunction with other graph representations.
-
 You are free to use the graph structure that fit your requirements
 the best, most graph algorithms and auxiliary data structures can be used
 with any graph structures.
-*/
-
-/**
-@defgroup semi_adaptors Semi-Adaptor Classes for Graphs
-@ingroup graphs
-\brief Graph types between real graphs and graph adaptors.
-
-This group describes some graph types between real graphs and graph adaptors.
-These classes wrap graphs to give new functionality as the adaptors do it.
-On the other hand they are not light-weight structures as the adaptors.
 */
 
 /**
@@ -152,14 +130,6 @@ class. We use the implicit minimum time map as the length map of the
 */
 
 /**
-@defgroup matrices Matrices
-@ingroup datas
-\brief Two dimensional data storages implemented in LEMON.
-
-This group describes two dimensional data storages implemented in LEMON.
-*/
-
-/**
 @defgroup paths Path Structures
 @ingroup datas
 \brief Path structures implemented in LEMON.
@@ -213,207 +183,12 @@ This group describes the algorithms for finding shortest paths in graphs.
 */
 
 /**
-@defgroup max_flow Maximum Flow algorithms
-@ingroup algs
-\brief Algorithms for finding maximum flows.
-
-This group describes the algorithms for finding maximum flows and
-feasible circulations.
-
-The maximum flow problem is to find a flow between a single source and
-a single target that is maximum. Formally, there is a \f$G=(V,A)\f$
-directed graph, an \f$c_a:A\rightarrow\mathbf{R}^+_0\f$ capacity
-function and given \f$s, t \in V\f$ source and target node. The
-maximum flow is the \f$f_a\f$ solution of the next optimization problem:
-
-\f[ 0 \le f_a \le c_a \f]
-\f[ \sum_{v\in\delta^{-}(u)}f_{vu}=\sum_{v\in\delta^{+}(u)}f_{uv}
-\qquad \forall u \in V \setminus \{s,t\}\f]
-\f[ \max \sum_{v\in\delta^{+}(s)}f_{uv} - \sum_{v\in\delta^{-}(s)}f_{vu}\f]
-
-LEMON contains several algorithms for solving maximum flow problems:
-- \ref lemon::EdmondsKarp "Edmonds-Karp"
-- \ref lemon::Preflow "Goldberg's Preflow algorithm"
-- \ref lemon::DinitzSleatorTarjan "Dinitz's blocking flow algorithm with dynamic trees"
-- \ref lemon::GoldbergTarjan "Preflow algorithm with dynamic trees"
-
-In most cases the \ref lemon::Preflow "Preflow" algorithm provides the
-fastest method to compute the maximum flow. All impelementations
-provides functions to query the minimum cut, which is the dual linear
-programming problem of the maximum flow.
-
-*/
-
-/**
-@defgroup min_cost_flow Minimum Cost Flow algorithms
-@ingroup algs
-
-\brief Algorithms for finding minimum cost flows and circulations.
-
-This group describes the algorithms for finding minimum cost flows and
-circulations.
-*/
-
-/**
-@defgroup min_cut Minimum Cut algorithms
-@ingroup algs
-
-\brief Algorithms for finding minimum cut in graphs.
-
-This group describes the algorithms for finding minimum cut in graphs.
-
-The minimum cut problem is to find a non-empty and non-complete
-\f$X\f$ subset of the vertices with minimum overall capacity on
-outgoing arcs. Formally, there is \f$G=(V,A)\f$ directed graph, an
-\f$c_a:A\rightarrow\mathbf{R}^+_0\f$ capacity function. The minimum
-cut is the \f$X\f$ solution of the next optimization problem:
-
-\f[ \min_{X \subset V, X\not\in \{\emptyset, V\}}
-\sum_{uv\in A, u\in X, v\not\in X}c_{uv}\f]
-
-LEMON contains several algorithms related to minimum cut problems:
-
-- \ref lemon::HaoOrlin "Hao-Orlin algorithm" to calculate minimum cut
-  in directed graphs
-- \ref lemon::NagamochiIbaraki "Nagamochi-Ibaraki algorithm" to
-  calculate minimum cut in undirected graphs
-- \ref lemon::GomoryHuTree "Gomory-Hu tree computation" to calculate all
-  pairs minimum cut in undirected graphs
-
-If you want to find minimum cut just between two distinict nodes,
-please see the \ref max_flow "Maximum Flow page".
-
-*/
-
-/**
-@defgroup graph_prop Connectivity and other graph properties
-@ingroup algs
-\brief Algorithms for discovering the graph properties
-
-This group describes the algorithms for discovering the graph properties
-like connectivity, bipartiteness, euler property, simplicity etc.
-
-\image html edge_biconnected_components.png
-\image latex edge_biconnected_components.eps "bi-edge-connected components" width=\textwidth
-*/
-
-/**
-@defgroup planar Planarity embedding and drawing
-@ingroup algs
-\brief Algorithms for planarity checking, embedding and drawing
-
-This group describes the algorithms for planarity checking,
-embedding and drawing.
-
-\image html planar.png
-\image latex planar.eps "Plane graph" width=\textwidth
-*/
-
-/**
-@defgroup matching Matching algorithms
-@ingroup algs
-\brief Algorithms for finding matchings in graphs and bipartite graphs.
-
-This group contains algorithm objects and functions to calculate
-matchings in graphs and bipartite graphs. The general matching problem is
-finding a subset of the arcs which does not shares common endpoints.
-
-There are several different algorithms for calculate matchings in
-graphs.  The matching problems in bipartite graphs are generally
-easier than in general graphs. The goal of the matching optimization
-can be the finding maximum cardinality, maximum weight or minimum cost
-matching. The search can be constrained to find perfect or
-maximum cardinality matching.
-
-LEMON contains the next algorithms:
-- \ref lemon::MaxBipartiteMatching "MaxBipartiteMatching" Hopcroft-Karp
-  augmenting path algorithm for calculate maximum cardinality matching in
-  bipartite graphs
-- \ref lemon::PrBipartiteMatching "PrBipartiteMatching" Push-Relabel
-  algorithm for calculate maximum cardinality matching in bipartite graphs
-- \ref lemon::MaxWeightedBipartiteMatching "MaxWeightedBipartiteMatching"
-  Successive shortest path algorithm for calculate maximum weighted matching
-  and maximum weighted bipartite matching in bipartite graph
-- \ref lemon::MinCostMaxBipartiteMatching "MinCostMaxBipartiteMatching"
-  Successive shortest path algorithm for calculate minimum cost maximum
-  matching in bipartite graph
-- \ref lemon::MaxMatching "MaxMatching" Edmond's blossom shrinking algorithm
-  for calculate maximum cardinality matching in general graph
-- \ref lemon::MaxWeightedMatching "MaxWeightedMatching" Edmond's blossom
-  shrinking algorithm for calculate maximum weighted matching in general
-  graph
-- \ref lemon::MaxWeightedPerfectMatching "MaxWeightedPerfectMatching"
-  Edmond's blossom shrinking algorithm for calculate maximum weighted
-  perfect matching in general graph
-
-\image html bipartite_matching.png
-\image latex bipartite_matching.eps "Bipartite Matching" width=\textwidth
-
-*/
-
-/**
 @defgroup spantree Minimum Spanning Tree algorithms
 @ingroup algs
 \brief Algorithms for finding a minimum cost spanning tree in a graph.
 
 This group describes the algorithms for finding a minimum cost spanning
 tree in a graph
-*/
-
-
-/**
-@defgroup auxalg Auxiliary algorithms
-@ingroup algs
-\brief Auxiliary algorithms implemented in LEMON.
-
-This group describes some algorithms implemented in LEMON
-in order to make it easier to implement complex algorithms.
-*/
-
-/**
-@defgroup approx Approximation algorithms
-\brief Approximation algorithms.
-
-This group describes the approximation and heuristic algorithms
-implemented in LEMON.
-*/
-
-/**
-@defgroup gen_opt_group General Optimization Tools
-\brief This group describes some general optimization frameworks
-implemented in LEMON.
-
-This group describes some general optimization frameworks
-implemented in LEMON.
-
-*/
-
-/**
-@defgroup lp_group Lp and Mip solvers
-@ingroup gen_opt_group
-\brief Lp and Mip solver interfaces for LEMON.
-
-This group describes Lp and Mip solver interfaces for LEMON. The
-various LP solvers could be used in the same manner with this
-interface.
-
-*/
-
-/**
-@defgroup lp_utils Tools for Lp and Mip solvers
-@ingroup lp_group
-\brief Helper tools to the Lp and Mip solvers.
-
-This group adds some helper tools to general optimization framework
-implemented in LEMON.
-*/
-
-/**
-@defgroup metah Metaheuristics
-@ingroup gen_opt_group
-\brief Metaheuristics for LEMON library.
-
-This group describes some metaheuristic optimization tools.
 */
 
 /**
@@ -450,15 +225,6 @@ of algorithms.
 */
 
 /**
-@defgroup graphbits Tools for Graph Implementation
-@ingroup utils
-\brief Tools to make it easier to create graphs.
-
-This group describes the tools that makes it easier to create graphs and
-the maps that dynamically update with the graph changes.
-*/
-
-/**
 @defgroup exceptions Exceptions
 @ingroup utils
 \brief Exceptions defined in LEMON.
@@ -471,8 +237,8 @@ This group describes the exceptions defined in LEMON.
 \brief Graph Input-Output methods
 
 This group describes the tools for importing and exporting graphs
-and graph related data. Now it supports the LEMON format, the
-\c DIMACS format and the encapsulated postscript (EPS) format.
+and graph related data. Now it supports the LEMON format
+and the encapsulated postscript (EPS) format.
 */
 
 /**
@@ -534,12 +300,6 @@ This group describes the skeletons and concept checking classes of LEMON's
 graph structures and helper classes used to implement these.
 */
 
-/* --- Unused group
-@defgroup experimental Experimental Structures and Algorithms
-This group describes some Experimental structures and algorithms.
-The stuff here is subject to change.
-*/
-
 /**
 \anchor demoprograms
 
@@ -551,13 +311,3 @@ the \c demo subdirectory of the source tree.
 It order to compile them, use <tt>--enable-demo</tt> configure option when
 build the library.
 */
-
-/**
-@defgroup tools Standalone utility applications
-
-Some utility applications are listed here.
-
-The standard compilation procedure (<tt>./configure;make</tt>) will compile
-them, as well.
-*/
-
