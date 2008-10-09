@@ -192,7 +192,6 @@ This group describes the algorithms for finding a minimum cost spanning
 tree in a graph
 */
 
-@ingroup algs
 /**
 @defgroup utils Tools and Utilities
 \brief Tools and utilities for programming in LEMON
@@ -300,8 +299,14 @@ This group describes the skeletons and concept checking classes of LEMON's
 graph structures and helper classes used to implement these.
 */
 
-
+/**
+@defgroup map_concepts Map Concepts
+@ingroup concept
+\brief Skeleton and concept checking classes for maps
+ 
 This group describes the skeletons and concept checking classes of maps.
+*/
+
 /**
 \anchor demoprograms
 
