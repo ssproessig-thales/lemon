@@ -41,13 +41,6 @@ non-commercial applications under very permissive
 
 \subsection howtoread How to read the documentation
 
-If you want to get a quick start and see the most important features then
-take a look at our \ref quicktour
-"Quick Tour to LEMON" which will guide you along.
-
-If you already feel like using our library, see the page that tells you
-\ref getstart "How to start using LEMON".
-
 If you
 want to see how LEMON works, see
 some \ref demoprograms "demo programs"!
