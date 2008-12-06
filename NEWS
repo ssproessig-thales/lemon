@@ -1,3 +1,17 @@
+2008-12-06 Version 1.0.1 released
+
+        Bugfix release.
+
+        #170: Bugfix SmartDigraph::split()
+        #171: Bugfix in SmartGraph::restoreSnapshot()
+        #172: Extended test cases for graphs and digraphs
+        #173: Bugfix in Random
+              * operator()s always return a double now
+              * the faulty real<Num>(Num) and real<Num>(Num,Num)
+                have been removed
+        #187: Remove DijkstraWidestPathOperationTraits
+        #61:  Bugfix in DfsVisit
+
 2008-10-13 Version 1.0 released
 
 	This is the first stable release of LEMON. Compared to the 0.x
