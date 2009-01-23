@@ -1,3 +1,20 @@
+2009-01-23 Version 1.0.2 released
+
+        Bugfix release.
+
+        #193: Bugfix in GraphReader::skipSection()
+        #195: Bugfix in ConEdgeIt()
+        #197: Bugfix in heap unionfind
+              * This bug affects Edmond's general matching algorithms.
+                (Not available in this release.)
+        #207: Fix 'make install' without 'make html' using CMAKE
+        #208: Suppress or fix VS2008 compilation warnings
+        ----: Update the LEMON icon
+        ----: Enable the component-based installer
+              (in installers made by CPACK)
+        ----: Set the proper version for CMAKE in the tarballs
+              (made by autotools).
+
 2008-12-06 Version 1.0.1 released
 
         Bugfix release.
