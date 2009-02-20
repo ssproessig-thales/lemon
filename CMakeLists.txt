@@ -23,6 +23,9 @@ ENDIF(MSVC)
 INCLUDE(FindDoxygen)
 INCLUDE(FindGhostscript)
 
+INCLUDE(CheckTypeSize)
+CHECK_TYPE_SIZE("long long" LONG_LONG)
+
 ENABLE_TESTING()
 
 ADD_SUBDIRECTORY(lemon)
