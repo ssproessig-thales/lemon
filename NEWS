@@ -1,3 +1,20 @@
+2009-03-26 Version 1.0.3 released
+
+        Bugfix release, mainly targeting better AIX/xlC and WIN32
+        compatibility.
+
+        ----: Minor clarification in the LICENSE file
+        ----: Add missing unistd.h include to time_measure.h
+        #204: Compilation bug fixed in graph_to_eps.h with VS2005
+        #214,#215: windows.h is never be included by lemon headers
+        #230: Build systems check the availability of 'long long' type
+        #229: Default implementation of Tolerance<> is used for integer types
+        #211,#212: Various fixes for compiling on AIX
+        ----: Improvements in CMAKE config
+              - docs is installed in share/doc/
+              - detects newer versions of Ghostscript
+        #239: Fix missing 'inline' specifier in time_measure.h
+        
 2009-01-23 Version 1.0.2 released
 
         Bugfix release.
