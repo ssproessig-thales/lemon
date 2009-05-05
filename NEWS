@@ -1,3 +1,12 @@
+2009-05-05 Version 1.0.4 released
+
+        Bugfix release.
+
+        #274,#280: Install lemon/config.h and fix its bad include by core.h
+        #275: Prefix macro names with LEMON_ in lemon/config.h
+        ----: Small script for making the release tarballs added
+        ----: Minor improvement in unify-sources.sh (a76f55d7d397)
+
 2009-03-27 LEMON joins to the COIN-OR initiative
 
         COIN-OR (Computational Infrastructure for Operations Research,
