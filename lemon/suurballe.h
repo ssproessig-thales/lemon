@@ -45,8 +45,8 @@ namespace lemon {
   ///
   /// Note that this problem is a special case of the \ref min_cost_flow
   /// "minimum cost flow problem". This implementation is actually an
-  /// efficient specialized version of the \ref CapacityScaling
-  /// "Successive Shortest Path" algorithm directly for this problem.
+  /// efficient specialized version of the Successive Shortest Path
+  /// algorithm directly for this problem.
   /// Therefore this class provides query functions for flow values and
   /// node potentials (the dual solution) just like the minimum cost flow
   /// algorithms.
