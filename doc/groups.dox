@@ -236,14 +236,6 @@ class. We use the implicit minimum time map as the length map of the
 */
 
 /**
-@defgroup matrices Matrices
-@ingroup datas
-\brief Two dimensional data storages implemented in LEMON.
-
-This group contains two dimensional data storages implemented in LEMON.
-*/
-
-/**
 @defgroup paths Path Structures
 @ingroup datas
 \brief %Path structures implemented in LEMON.
@@ -293,16 +285,8 @@ This group contains the common graph search algorithms, namely
 
 This group contains the algorithms for finding shortest paths in digraphs.
 
- - \ref Dijkstra algorithm for finding shortest paths from a source node
-   when all arc lengths are non-negative.
- - \ref BellmanFord "Bellman-Ford" algorithm for finding shortest paths
-   from a source node when arc lenghts can be either positive or negative,
-   but the digraph should not contain directed cycles with negative total
-   length.
- - \ref FloydWarshall "Floyd-Warshall" and \ref Johnson "Johnson" algorithms
-   for solving the \e all-pairs \e shortest \e paths \e problem when arc
-   lenghts can be either positive or negative, but the digraph should
-   not contain directed cycles with negative total length.
+ - \ref Dijkstra Dijkstra's algorithm for finding shortest paths from a 
+   source node when all arc lengths are non-negative.
  - \ref Suurballe A successive shortest path algorithm for finding
    arc-disjoint paths between two nodes having minimum total length.
 */
@@ -327,16 +311,14 @@ following optimization problem.
     \quad \forall u\in V\setminus\{s,t\} \f]
 \f[ 0 \leq f(uv) \leq cap(uv) \quad \forall uv\in A \f]
 
-LEMON contains several algorithms for solving maximum flow problems:
-- \ref EdmondsKarp Edmonds-Karp algorithm.
-- \ref Preflow Goldberg-Tarjan's preflow push-relabel algorithm.
-- \ref DinitzSleatorTarjan Dinitz's blocking flow algorithm with dynamic trees.
-- \ref GoldbergTarjan Preflow push-relabel algorithm with dynamic trees.
+\ref Preflow implements the preflow push-relabel algorithm of Goldberg and
+Tarjan for solving this problem. It also provides functions to query the
+minimum cut, which is the dual problem of maximum flow.
 
-In most cases the \ref Preflow "Preflow" algorithm provides the
-fastest method for computing a maximum flow. All implementations
-provides functions to also query the minimum cut, which is the dual
-problem of the maximum flow.
+\ref Circulation is a preflow push-relabel algorithm implemented directly 
+for finding feasible circulations, which is a somewhat different problem,
+but it is strongly related to maximum flow.
+For more information, see \ref Circulation.
 */
 
 /**
@@ -421,27 +403,9 @@ Here \f$cost^\pi(uv)\f$ denotes the \e reduced \e cost of the arc
 \f$uv\in A\f$ with respect to the potential function \f$\pi\f$, i.e.
 \f[ cost^\pi(uv) = cost(uv) + \pi(u) - \pi(v).\f]
 
-All algorithms provide dual solution (node potentials) as well,
-if an optimal flow is found.
-
-LEMON contains several algorithms for solving minimum cost flow problems.
- - \ref NetworkSimplex Primal Network Simplex algorithm with various
-   pivot strategies.
- - \ref CostScaling Push-Relabel and Augment-Relabel algorithms based on
-   cost scaling.
- - \ref CapacityScaling Successive Shortest %Path algorithm with optional
-   capacity scaling.
- - \ref CancelAndTighten The Cancel and Tighten algorithm.
- - \ref CycleCanceling Cycle-Canceling algorithms.
-
-Most of these implementations support the general inequality form of the
-minimum cost flow problem, but CancelAndTighten and CycleCanceling
-only support the equality form due to the primal method they use.
-
-In general NetworkSimplex is the most efficient implementation,
-but in special cases other algorithms could be faster.
-For example, if the total supply and/or capacities are rather small,
-CapacityScaling is usually the fastest algorithm (without effective scaling).
+\ref NetworkSimplex is an efficient implementation of the primal Network
+Simplex algorithm for finding minimum cost flows. It also provides dual
+solution (node potentials), if an optimal flow is found.
 */
 
 /**
@@ -465,8 +429,6 @@ LEMON contains several algorithms related to minimum cut problems:
 
 - \ref HaoOrlin "Hao-Orlin algorithm" for calculating minimum cut
   in directed graphs.
-- \ref NagamochiIbaraki "Nagamochi-Ibaraki algorithm" for
-  calculating minimum cut in undirected graphs.
 - \ref GomoryHu "Gomory-Hu tree computation" for calculating
   all-pairs minimum cut in undirected graphs.
 
@@ -487,45 +449,21 @@ like connectivity, bipartiteness, euler property, simplicity etc.
 */
 
 /**
-@defgroup planar Planarity Embedding and Drawing
-@ingroup algs
-\brief Algorithms for planarity checking, embedding and drawing
-
-This group contains the algorithms for planarity checking,
-embedding and drawing.
-
-\image html planar.png
-\image latex planar.eps "Plane graph" width=\textwidth
-*/
-
-/**
 @defgroup matching Matching Algorithms
 @ingroup algs
 \brief Algorithms for finding matchings in graphs and bipartite graphs.
 
-This group contains the algorithms for calculating
-matchings in graphs and bipartite graphs. The general matching problem is
-finding a subset of the edges for which each node has at most one incident
-edge.
+This group contains the algorithms for calculating matchings in graphs.
+The general matching problem is finding a subset of the edges for which
+each node has at most one incident edge.
 
 There are several different algorithms for calculate matchings in
-graphs.  The matching problems in bipartite graphs are generally
-easier than in general graphs. The goal of the matching optimization
+graphs. The goal of the matching optimization
 can be finding maximum cardinality, maximum weight or minimum cost
 matching. The search can be constrained to find perfect or
 maximum cardinality matching.
 
 The matching algorithms implemented in LEMON:
-- \ref MaxBipartiteMatching Hopcroft-Karp augmenting path algorithm
-  for calculating maximum cardinality matching in bipartite graphs.
-- \ref PrBipartiteMatching Push-relabel algorithm
-  for calculating maximum cardinality matching in bipartite graphs.
-- \ref MaxWeightedBipartiteMatching
-  Successive shortest path algorithm for calculating maximum weighted
-  matching and maximum weighted bipartite matching in bipartite graphs.
-- \ref MinCostMaxBipartiteMatching
-  Successive shortest path algorithm for calculating minimum cost maximum
-  matching in bipartite graphs.
 - \ref MaxMatching Edmond's blossom shrinking algorithm for calculating
   maximum cardinality matching in general graphs.
 - \ref MaxWeightedMatching Edmond's blossom shrinking algorithm for calculating
@@ -557,15 +495,6 @@ in order to make it easier to implement complex algorithms.
 */
 
 /**
-@defgroup approx Approximation Algorithms
-@ingroup algs
-\brief Approximation algorithms.
-
-This group contains the approximation and heuristic algorithms
-implemented in LEMON.
-*/
-
-/**
 @defgroup gen_opt_group General Optimization Tools
 \brief This group contains some general optimization frameworks
 implemented in LEMON.
@@ -582,23 +511,6 @@ implemented in LEMON.
 This group contains Lp and Mip solver interfaces for LEMON. The
 various LP solvers could be used in the same manner with this
 interface.
-*/
-
-/**
-@defgroup lp_utils Tools for Lp and Mip Solvers
-@ingroup lp_group
-\brief Helper tools to the Lp and Mip solvers.
-
-This group adds some helper tools to general optimization framework
-implemented in LEMON.
-*/
-
-/**
-@defgroup metah Metaheuristics
-@ingroup gen_opt_group
-\brief Metaheuristics for LEMON library.
-
-This group contains some metaheuristic optimization tools.
 */
 
 /**
