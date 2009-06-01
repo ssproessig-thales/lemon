@@ -2,14 +2,17 @@ dnl Process this file with autoconf to produce a configure script.
 
 dnl Version information.
 m4_define([lemon_version_number],
-	[m4_normalize(esyscmd([echo ${LEMON_VERSION}]))])
+          [m4_normalize(esyscmd([echo ${LEMON_VERSION}]))])
 dnl m4_define([lemon_version_number], [])
 m4_define([lemon_hg_path], [m4_normalize(esyscmd([./scripts/chg-len.py]))])
-m4_define([lemon_hg_revision], [m4_normalize(esyscmd([hg id -i]))])
+m4_define([lemon_hg_revision], [m4_normalize(esyscmd([hg id -i 2> /dev/null]))])
 m4_define([lemon_version], [ifelse(lemon_version_number(),
-			   [],
-			   [lemon_hg_path().lemon_hg_revision()],
-			   [lemon_version_number()])])
+                           [],
+                           [ifelse(lemon_hg_revision(),
+                           [],
+                           [hg-tip],
+                           [lemon_hg_path().lemon_hg_revision()])],
+                           [lemon_version_number()])])
 
 AC_PREREQ([2.59])
 AC_INIT([LEMON], [lemon_version()], [lemon-user@lemon.cs.elte.hu], [lemon])
@@ -18,6 +21,8 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects nostdinc])
 AC_CONFIG_SRCDIR([lemon/list_graph.h])
 AC_CONFIG_HEADERS([config.h lemon/config.h])
+
+AC_DEFINE([LEMON_VERSION], [lemon_version()], [The version string])
 
 dnl Do compilation tests using the C++ compiler.
 AC_LANG([C++])
