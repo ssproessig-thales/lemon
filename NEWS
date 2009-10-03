@@ -1,3 +1,23 @@
+2009-10-03 Version 1.1.1 released
+
+        Bugfix release.
+
+        #295: Suppress MSVC warnings using pragmas
+        ----: Various CMAKE related improvements
+              * Remove duplications from doc/CMakeLists.txt
+              * Rename documentation install folder from 'docs' to 'html'
+              * Add tools/CMakeLists.txt to the tarball
+              * Generate and install LEMONConfig.cmake
+              * Change the label of the html project in Visual Studio
+              * Fix the check for the 'long long' type
+              * Put the version string into config.h
+              * Minor CMake improvements
+              * Set the version to 'hg-tip' if everything fails
+        #311: Add missing 'explicit' keywords
+        #302: Fix the implementation and doc of CrossRefMap
+        #308: Remove duplicate list_graph.h entry from source list
+        #307: Bug fix in Preflow and Circulation
+
 2009-05-13 Version 1.1 released
 
         This is the second stable release of the 1.x series. It
