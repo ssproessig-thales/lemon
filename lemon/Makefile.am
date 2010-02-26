@@ -59,7 +59,6 @@ lemon_HEADERS += \
 	lemon/assert.h \
 	lemon/bfs.h \
 	lemon/bin_heap.h \
-	lemon/bucket_heap.h \
 	lemon/cbc.h \
 	lemon/circulation.h \
 	lemon/clp.h \
@@ -77,7 +76,6 @@ lemon_HEADERS += \
 	lemon/elevator.h \
 	lemon/error.h \
 	lemon/euler.h \
-	lemon/fib_heap.h \
 	lemon/full_graph.h \
 	lemon/glpk.h \
 	lemon/gomory_hu.h \
@@ -100,7 +98,6 @@ lemon_HEADERS += \
 	lemon/network_simplex.h \
 	lemon/path.h \
 	lemon/preflow.h \
-	lemon/radix_heap.h \
 	lemon/radix_sort.h \
 	lemon/random.h \
 	lemon/smart_graph.h \
