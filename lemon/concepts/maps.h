@@ -182,8 +182,7 @@ namespace lemon {
 
       template<typename _ReferenceMap>
       struct Constraints {
-        typename enable_if<typename _ReferenceMap::ReferenceMapTag, void>::type
-        constraints() {
+        void constraints() {
           checkConcept<ReadWriteMap<K, T>, _ReferenceMap >();
           ref = m[key];
           m[key] = val;
