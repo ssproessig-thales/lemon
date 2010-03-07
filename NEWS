@@ -1,3 +1,13 @@
+2010-03-08 Version 1.0.5 released
+
+        Bugfix release.
+
+        #250: Fix in pathSource() and pathTarget()
+        #321: Use pathCopy(from,to) instead of copyPath(to,from)
+        #330: Bug fix in map_extender.h
+        #335: Fix clear() function in ExtendFindEnum (#335)
+        #336: Fix the date field comment of graphToEps() output
+
 2009-05-05 Version 1.0.4 released
 
         Bugfix release.
