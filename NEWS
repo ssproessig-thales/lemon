@@ -1,3 +1,15 @@
+2010-10-21 Version 1.2.1 released
+
+        Bugfix release.
+
+        #366: Fix Pred[Matrix]MapPath::empty()
+        #371: Bug fix in (di)graphCopy()
+              The target graph is cleared before adding nodes and arcs/edges.
+
+        #364: Add missing UndirectedTags
+        #368: Fix the usage of std::numeric_limits<>::min() in Network Simplex
+        #372: Fix a critical bug in preflow
+
 2010-03-19 Version 1.2 released
 
         This is major feature release
