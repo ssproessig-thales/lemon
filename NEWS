@@ -1,3 +1,12 @@
+2010-10-21 Version 1.0.6 released
+
+        Bugfix release.
+
+        #366: Fix Pred[Matrix]MapPath::empty()
+        #371: Bug fix in (di)graphCopy()
+              The target graph is cleared before adding nodes and arcs/edges.
+
+
 2010-03-08 Version 1.0.5 released
 
         Bugfix release.
