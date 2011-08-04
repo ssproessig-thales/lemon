@@ -1,3 +1,11 @@
+2011-08-08 Version 1.0.7 released
+
+        Release series 1.0 has reached its end of life. This is the last
+        bugfix release in that series.
+
+        #382: Allow lgf files without Arc maps
+        #392: Bug fix in Dfs::start(s,t)
+
 2010-10-21 Version 1.0.6 released
 
         Bugfix release.
