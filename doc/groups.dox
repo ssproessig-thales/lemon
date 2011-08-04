@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2008
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -303,7 +303,7 @@ graph structures and helper classes used to implement these.
 @defgroup map_concepts Map Concepts
 @ingroup concept
 \brief Skeleton and concept checking classes for maps
- 
+
 This group describes the skeletons and concept checking classes of maps.
 */
 

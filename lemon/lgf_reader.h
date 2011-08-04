@@ -391,7 +391,7 @@ namespace lemon {
   class DigraphReader;
 
   template <typename Digraph>
-  DigraphReader<Digraph> digraphReader(Digraph& digraph, 
+  DigraphReader<Digraph> digraphReader(Digraph& digraph,
                                        std::istream& is = std::cin);
   template <typename Digraph>
   DigraphReader<Digraph> digraphReader(Digraph& digraph, const std::string& fn);
@@ -563,7 +563,7 @@ namespace lemon {
     template <typename DGR>
     friend DigraphReader<DGR> digraphReader(DGR& digraph, std::istream& is);
     template <typename DGR>
-    friend DigraphReader<DGR> digraphReader(DGR& digraph, 
+    friend DigraphReader<DGR> digraphReader(DGR& digraph,
                                             const std::string& fn);
     template <typename DGR>
     friend DigraphReader<DGR> digraphReader(DGR& digraph, const char *fn);
@@ -1229,9 +1229,9 @@ namespace lemon {
 
   template <typename Graph>
   class GraphReader;
- 
+
   template <typename Graph>
-  GraphReader<Graph> graphReader(Graph& graph, 
+  GraphReader<Graph> graphReader(Graph& graph,
                                  std::istream& is = std::cin);
   template <typename Graph>
   GraphReader<Graph> graphReader(Graph& graph, const std::string& fn);
@@ -1366,7 +1366,7 @@ namespace lemon {
     template <typename GR>
     friend GraphReader<GR> graphReader(GR& graph, std::istream& is);
     template <typename GR>
-    friend GraphReader<GR> graphReader(GR& graph, const std::string& fn); 
+    friend GraphReader<GR> graphReader(GR& graph, const std::string& fn);
     template <typename GR>
     friend GraphReader<GR> graphReader(GR& graph, const char *fn);
 

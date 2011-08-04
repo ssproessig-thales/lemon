@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2008
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -506,7 +506,7 @@ namespace lemon {
   private:
 
     template <typename DGR>
-    friend DigraphWriter<DGR> digraphWriter(const DGR& digraph, 
+    friend DigraphWriter<DGR> digraphWriter(const DGR& digraph,
                                             std::ostream& os);
     template <typename DGR>
     friend DigraphWriter<DGR> digraphWriter(const DGR& digraph,
@@ -1082,7 +1082,7 @@ namespace lemon {
     template <typename GR>
     friend GraphWriter<GR> graphWriter(const GR& graph,
                                        const char *fn);
-    
+
     GraphWriter(GraphWriter& other)
       : _os(other._os), local_os(other.local_os), _graph(other._graph),
         _skip_nodes(other._skip_nodes), _skip_edges(other._skip_edges) {
