@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2008
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -466,8 +466,8 @@ namespace lemon {
       explicit Arc(int id) { _id = id;}
 
     public:
-      operator Edge() const { 
-        return _id != -1 ? edgeFromId(_id / 2) : INVALID; 
+      operator Edge() const {
+        return _id != -1 ? edgeFromId(_id / 2) : INVALID;
       }
 
       Arc() {}
