@@ -1,3 +1,18 @@
+2011-08-08 Version 1.1.4 released
+
+        Bugfix release.
+
+        #392: Bug fix in Dfs::start(s,t)
+        #414: Fix wrong initialization in Preflow
+        #404: Update Doxygen configuration
+        #416: Support tests with valgrind
+        #418: Better Win CodeBlock/MinGW support
+        #419: Backport build environment improvements from the main branch
+              - Build of mip_test and lp_test precede the running of the tests
+              - Also search for coin libs under ${COIN_ROOT_DIR}/lib/coin
+              - Do not look for COIN_VOL libraries
+        #382: Allow lgf file without Arc maps
+        
 2010-10-21 Version 1.1.3 released
 
         Bugfix release.
