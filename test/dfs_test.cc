@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2010
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -219,7 +219,7 @@ void checkDfs() {
   Dfs<Digraph> dfs(G);
   check(dfs.run(s1,t1) && dfs.reached(t1),"Node 3 is reachable from Node 6.");
   }
-  
+
   {
     NullMap<Node,Arc> myPredMap;
     dfs(G).predMap(myPredMap).run(s);
