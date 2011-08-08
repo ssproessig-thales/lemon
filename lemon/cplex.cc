@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -456,7 +456,7 @@ namespace lemon {
   }
 
   void CplexBase::_applyMessageLevel() {
-    CPXsetintparam(cplexEnv(), CPX_PARAM_SCRIND, 
+    CPXsetintparam(cplexEnv(), CPX_PARAM_SCRIND,
                    _message_enabled ? CPX_ON : CPX_OFF);
   }
 

@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -275,7 +275,7 @@ This group contains the common graph search algorithms, namely
 
 This group contains the algorithms for finding shortest paths in digraphs.
 
- - \ref Dijkstra Dijkstra's algorithm for finding shortest paths from a 
+ - \ref Dijkstra Dijkstra's algorithm for finding shortest paths from a
    source node when all arc lengths are non-negative.
  - \ref Suurballe A successive shortest path algorithm for finding
    arc-disjoint paths between two nodes having minimum total length.
@@ -306,7 +306,7 @@ Tarjan for solving this problem. It also provides functions to query the
 minimum cut, which is the dual problem of maximum flow.
 
 
-\ref Circulation is a preflow push-relabel algorithm implemented directly 
+\ref Circulation is a preflow push-relabel algorithm implemented directly
 for finding feasible circulations, which is a somewhat different problem,
 but it is strongly related to maximum flow.
 For more information, see \ref Circulation.

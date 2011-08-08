@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -80,7 +80,7 @@ void checkSuurballeCompile()
   typedef Digraph::Node Node;
   typedef Digraph::Arc Arc;
   typedef concepts::ReadMap<Arc, VType> LengthMap;
-  
+
   typedef Suurballe<Digraph, LengthMap> SuurballeType;
 
   Digraph g;
@@ -104,7 +104,7 @@ void checkSuurballeCompile()
   k = suurb_test.findFlow(n);
   k = suurb_test.findFlow(n, k);
   suurb_test.findPaths();
-  
+
   int f;
   VType c;
   c = const_suurb_test.totalLength();
@@ -116,7 +116,7 @@ void checkSuurballeCompile()
     const_suurb_test.potentialMap();
   k = const_suurb_test.pathNum();
   Path<Digraph> p = const_suurb_test.path(k);
-  
+
   ignore_unused_variable_warning(fm);
   ignore_unused_variable_warning(pm);
 }

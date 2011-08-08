@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -113,7 +113,7 @@ void checkPreflowCompile()
   const FlowMap& fm = const_preflow_test.flowMap();
   b = const_preflow_test.minCut(n);
   const_preflow_test.minCutMap(cut);
-  
+
   ignore_unused_variable_warning(fm);
 }
 
@@ -154,7 +154,7 @@ bool checkFlow(const SmartDigraph& g,
 void initFlowTest()
 {
   DIGRAPH_TYPEDEFS(SmartDigraph);
-  
+
   SmartDigraph g;
   SmartDigraph::ArcMap<int> cap(g),iflow(g);
   Node s=g.addNode(); Node t=g.addNode();
@@ -266,6 +266,6 @@ int main() {
         "The max flow value or the three min cut values are incorrect.");
 
   initFlowTest();
-  
+
   return 0;
 }
