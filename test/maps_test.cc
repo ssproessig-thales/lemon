@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -70,8 +70,10 @@ int main()
   checkConcept<WriteMap<A,C>, WriteMap<A,C> >();
   checkConcept<ReadWriteMap<A,B>, ReadWriteMap<A,B> >();
   checkConcept<ReadWriteMap<A,C>, ReadWriteMap<A,C> >();
-  checkConcept<ReferenceMap<A,B,B&,const B&>, ReferenceMap<A,B,B&,const B&> >();
-  checkConcept<ReferenceMap<A,C,C&,const C&>, ReferenceMap<A,C,C&,const C&> >();
+  checkConcept<ReferenceMap<A,B,B&,const B&>,
+               ReferenceMap<A,B,B&,const B&> >();
+  checkConcept<ReferenceMap<A,C,C&,const C&>,
+               ReferenceMap<A,C,C&,const C&> >();
 
   // NullMap
   {
@@ -200,7 +202,8 @@ int main()
     B b = functorToMap(F())[A()];
 
     checkConcept<ReadMap<A,B>, MapToFunctor<ReadMap<A,B> > >();
-    MapToFunctor<ReadMap<A,B> > map = MapToFunctor<ReadMap<A,B> >(ReadMap<A,B>());
+    MapToFunctor<ReadMap<A,B> > map =
+      MapToFunctor<ReadMap<A,B> >(ReadMap<A,B>());
 
     check(functorToMap(&func)[A()] == 3,
           "Something is wrong with FunctorToMap");
@@ -349,7 +352,7 @@ int main()
           it != map2.end(); ++it )
       check(v1[i++] == *it, "Something is wrong with LoggerBoolMap");
   }
-  
+
   // CrossRefMap
   {
     typedef ListDigraph Graph;
@@ -357,16 +360,16 @@ int main()
 
     checkConcept<ReadWriteMap<Node, int>,
                  CrossRefMap<Graph, Node, int> >();
-    
+
     Graph gr;
     typedef CrossRefMap<Graph, Node, char> CRMap;
     typedef CRMap::ValueIterator ValueIt;
     CRMap map(gr);
-    
+
     Node n0 = gr.addNode();
     Node n1 = gr.addNode();
     Node n2 = gr.addNode();
-    
+
     map.set(n0, 'A');
     map.set(n1, 'B');
     map.set(n2, 'C');

@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -41,7 +41,7 @@ namespace lemon {
   ///
   /// This class implements Edmonds' alternating forest matching algorithm
   /// for finding a maximum cardinality matching in a general undirected graph.
-  /// It can be started from an arbitrary initial matching 
+  /// It can be started from an arbitrary initial matching
   /// (the default is the empty one).
   ///
   /// The dual solution of the problem is a map of the nodes to
@@ -69,11 +69,11 @@ namespace lemon {
 
     ///\brief Status constants for Gallai-Edmonds decomposition.
     ///
-    ///These constants are used for indicating the Gallai-Edmonds 
+    ///These constants are used for indicating the Gallai-Edmonds
     ///decomposition of a graph. The nodes with status \c EVEN (or \c D)
     ///induce a subgraph with factor-critical components, the nodes with
     ///status \c ODD (or \c A) form the canonical barrier, and the nodes
-    ///with status \c MATCHED (or \c C) induce a subgraph having a 
+    ///with status \c MATCHED (or \c C) induce a subgraph having a
     ///perfect matching.
     enum Status {
       EVEN = 1,       ///< = 1. (\c D is an alias for \c EVEN.)
@@ -512,7 +512,7 @@ namespace lemon {
       }
     }
 
-    /// \brief Start Edmonds' algorithm with a heuristic improvement 
+    /// \brief Start Edmonds' algorithm with a heuristic improvement
     /// for dense graphs
     ///
     /// This function runs Edmonds' algorithm with a heuristic of postponing
@@ -534,8 +534,8 @@ namespace lemon {
 
     /// \brief Run Edmonds' algorithm
     ///
-    /// This function runs Edmonds' algorithm. An additional heuristic of 
-    /// postponing shrinks is used for relatively dense graphs 
+    /// This function runs Edmonds' algorithm. An additional heuristic of
+    /// postponing shrinks is used for relatively dense graphs
     /// (for which <tt>m>=2*n</tt> holds).
     void run() {
       if (countEdges(_graph) < 2 * countNodes(_graph)) {
@@ -556,7 +556,7 @@ namespace lemon {
 
     /// \brief Return the size (cardinality) of the matching.
     ///
-    /// This function returns the size (cardinality) of the current matching. 
+    /// This function returns the size (cardinality) of the current matching.
     /// After run() it returns the size of the maximum matching in the graph.
     int matchingSize() const {
       int size = 0;
@@ -570,7 +570,7 @@ namespace lemon {
 
     /// \brief Return \c true if the given edge is in the matching.
     ///
-    /// This function returns \c true if the given edge is in the current 
+    /// This function returns \c true if the given edge is in the current
     /// matching.
     bool matching(const Edge& edge) const {
       return edge == (*_matching)[_graph.u(edge)];
@@ -579,7 +579,7 @@ namespace lemon {
     /// \brief Return the matching arc (or edge) incident to the given node.
     ///
     /// This function returns the matching arc (or edge) incident to the
-    /// given node in the current matching or \c INVALID if the node is 
+    /// given node in the current matching or \c INVALID if the node is
     /// not covered by the matching.
     Arc matching(const Node& n) const {
       return (*_matching)[n];
@@ -595,7 +595,7 @@ namespace lemon {
 
     /// \brief Return the mate of the given node.
     ///
-    /// This function returns the mate of the given node in the current 
+    /// This function returns the mate of the given node in the current
     /// matching or \c INVALID if the node is not covered by the matching.
     Node mate(const Node& n) const {
       return (*_matching)[n] != INVALID ?
@@ -605,7 +605,7 @@ namespace lemon {
     /// @}
 
     /// \name Dual Solution
-    /// Functions to get the dual solution, i.e. the Gallai-Edmonds 
+    /// Functions to get the dual solution, i.e. the Gallai-Edmonds
     /// decomposition.
 
     /// @{
@@ -648,8 +648,8 @@ namespace lemon {
   /// on extensive use of priority queues and provides
   /// \f$O(nm\log n)\f$ time complexity.
   ///
-  /// The maximum weighted matching problem is to find a subset of the 
-  /// edges in an undirected graph with maximum overall weight for which 
+  /// The maximum weighted matching problem is to find a subset of the
+  /// edges in an undirected graph with maximum overall weight for which
   /// each node has at most one incident edge.
   /// It can be formulated with the following linear program.
   /// \f[ \sum_{e \in \delta(u)}x_e \le 1 \quad \forall u\in V\f]
@@ -673,16 +673,16 @@ namespace lemon {
   /** \f[\min \sum_{u \in V}y_u + \sum_{B \in \mathcal{O}}
       \frac{\vert B \vert - 1}{2}z_B\f] */
   ///
-  /// The algorithm can be executed with the run() function. 
+  /// The algorithm can be executed with the run() function.
   /// After it the matching (the primal solution) and the dual solution
-  /// can be obtained using the query functions and the 
-  /// \ref MaxWeightedMatching::BlossomIt "BlossomIt" nested class, 
-  /// which is able to iterate on the nodes of a blossom. 
+  /// can be obtained using the query functions and the
+  /// \ref MaxWeightedMatching::BlossomIt "BlossomIt" nested class,
+  /// which is able to iterate on the nodes of a blossom.
   /// If the value type is integer, then the dual solution is multiplied
   /// by \ref MaxWeightedMatching::dualScale "4".
   ///
   /// \tparam GR The undirected graph type the algorithm runs on.
-  /// \tparam WM The type edge weight map. The default type is 
+  /// \tparam WM The type edge weight map. The default type is
   /// \ref concepts::Graph::EdgeMap "GR::EdgeMap<int>".
 #ifdef DOXYGEN
   template <typename GR, typename WM>
@@ -1720,7 +1720,7 @@ namespace lemon {
         (*_delta2_index)[i] = _delta2->PRE_HEAP;
         (*_delta4_index)[i] = _delta4->PRE_HEAP;
       }
-      
+
       _delta1->clear();
       _delta2->clear();
       _delta3->clear();
@@ -1868,7 +1868,7 @@ namespace lemon {
     /// @}
 
     /// \name Primal Solution
-    /// Functions to get the primal solution, i.e. the maximum weighted 
+    /// Functions to get the primal solution, i.e. the maximum weighted
     /// matching.\n
     /// Either \ref run() or \ref start() function should be called before
     /// using them.
@@ -1907,7 +1907,7 @@ namespace lemon {
 
     /// \brief Return \c true if the given edge is in the matching.
     ///
-    /// This function returns \c true if the given edge is in the found 
+    /// This function returns \c true if the given edge is in the found
     /// matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -1918,7 +1918,7 @@ namespace lemon {
     /// \brief Return the matching arc (or edge) incident to the given node.
     ///
     /// This function returns the matching arc (or edge) incident to the
-    /// given node in the found matching or \c INVALID if the node is 
+    /// given node in the found matching or \c INVALID if the node is
     /// not covered by the matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -1936,7 +1936,7 @@ namespace lemon {
 
     /// \brief Return the mate of the given node.
     ///
-    /// This function returns the mate of the given node in the found 
+    /// This function returns the mate of the given node in the found
     /// matching or \c INVALID if the node is not covered by the matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -1956,8 +1956,8 @@ namespace lemon {
 
     /// \brief Return the value of the dual solution.
     ///
-    /// This function returns the value of the dual solution. 
-    /// It should be equal to the primal value scaled by \ref dualScale 
+    /// This function returns the value of the dual solution.
+    /// It should be equal to the primal value scaled by \ref dualScale
     /// "dual scale".
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -2012,9 +2012,9 @@ namespace lemon {
 
     /// \brief Iterator for obtaining the nodes of a blossom.
     ///
-    /// This class provides an iterator for obtaining the nodes of the 
+    /// This class provides an iterator for obtaining the nodes of the
     /// given blossom. It lists a subset of the nodes.
-    /// Before using this iterator, you must allocate a 
+    /// Before using this iterator, you must allocate a
     /// MaxWeightedMatching class and execute it.
     class BlossomIt {
     public:
@@ -2023,8 +2023,8 @@ namespace lemon {
       ///
       /// Constructor to get the nodes of the given variable.
       ///
-      /// \pre Either \ref MaxWeightedMatching::run() "algorithm.run()" or 
-      /// \ref MaxWeightedMatching::start() "algorithm.start()" must be 
+      /// \pre Either \ref MaxWeightedMatching::run() "algorithm.run()" or
+      /// \ref MaxWeightedMatching::start() "algorithm.start()" must be
       /// called before initializing this iterator.
       BlossomIt(const MaxWeightedMatching& algorithm, int variable)
         : _algorithm(&algorithm)
@@ -2077,8 +2077,8 @@ namespace lemon {
   /// is based on extensive use of priority queues and provides
   /// \f$O(nm\log n)\f$ time complexity.
   ///
-  /// The maximum weighted perfect matching problem is to find a subset of 
-  /// the edges in an undirected graph with maximum overall weight for which 
+  /// The maximum weighted perfect matching problem is to find a subset of
+  /// the edges in an undirected graph with maximum overall weight for which
   /// each node has exactly one incident edge.
   /// It can be formulated with the following linear program.
   /// \f[ \sum_{e \in \delta(u)}x_e = 1 \quad \forall u\in V\f]
@@ -2101,16 +2101,16 @@ namespace lemon {
   /** \f[\min \sum_{u \in V}y_u + \sum_{B \in \mathcal{O}}
       \frac{\vert B \vert - 1}{2}z_B\f] */
   ///
-  /// The algorithm can be executed with the run() function. 
+  /// The algorithm can be executed with the run() function.
   /// After it the matching (the primal solution) and the dual solution
-  /// can be obtained using the query functions and the 
-  /// \ref MaxWeightedPerfectMatching::BlossomIt "BlossomIt" nested class, 
-  /// which is able to iterate on the nodes of a blossom. 
+  /// can be obtained using the query functions and the
+  /// \ref MaxWeightedPerfectMatching::BlossomIt "BlossomIt" nested class,
+  /// which is able to iterate on the nodes of a blossom.
   /// If the value type is integer, then the dual solution is multiplied
   /// by \ref MaxWeightedMatching::dualScale "4".
   ///
   /// \tparam GR The undirected graph type the algorithm runs on.
-  /// \tparam WM The type edge weight map. The default type is 
+  /// \tparam WM The type edge weight map. The default type is
   /// \ref concepts::Graph::EdgeMap "GR::EdgeMap<int>".
 #ifdef DOXYGEN
   template <typename GR, typename WM>
@@ -3115,7 +3115,7 @@ namespace lemon {
     /// @}
 
     /// \name Primal Solution
-    /// Functions to get the primal solution, i.e. the maximum weighted 
+    /// Functions to get the primal solution, i.e. the maximum weighted
     /// perfect matching.\n
     /// Either \ref run() or \ref start() function should be called before
     /// using them.
@@ -3139,7 +3139,7 @@ namespace lemon {
 
     /// \brief Return \c true if the given edge is in the matching.
     ///
-    /// This function returns \c true if the given edge is in the found 
+    /// This function returns \c true if the given edge is in the found
     /// matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -3150,7 +3150,7 @@ namespace lemon {
     /// \brief Return the matching arc (or edge) incident to the given node.
     ///
     /// This function returns the matching arc (or edge) incident to the
-    /// given node in the found matching or \c INVALID if the node is 
+    /// given node in the found matching or \c INVALID if the node is
     /// not covered by the matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -3168,7 +3168,7 @@ namespace lemon {
 
     /// \brief Return the mate of the given node.
     ///
-    /// This function returns the mate of the given node in the found 
+    /// This function returns the mate of the given node in the found
     /// matching or \c INVALID if the node is not covered by the matching.
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -3187,8 +3187,8 @@ namespace lemon {
 
     /// \brief Return the value of the dual solution.
     ///
-    /// This function returns the value of the dual solution. 
-    /// It should be equal to the primal value scaled by \ref dualScale 
+    /// This function returns the value of the dual solution.
+    /// It should be equal to the primal value scaled by \ref dualScale
     /// "dual scale".
     ///
     /// \pre Either run() or start() must be called before using this function.
@@ -3243,9 +3243,9 @@ namespace lemon {
 
     /// \brief Iterator for obtaining the nodes of a blossom.
     ///
-    /// This class provides an iterator for obtaining the nodes of the 
+    /// This class provides an iterator for obtaining the nodes of the
     /// given blossom. It lists a subset of the nodes.
-    /// Before using this iterator, you must allocate a 
+    /// Before using this iterator, you must allocate a
     /// MaxWeightedPerfectMatching class and execute it.
     class BlossomIt {
     public:
@@ -3254,8 +3254,8 @@ namespace lemon {
       ///
       /// Constructor to get the nodes of the given variable.
       ///
-      /// \pre Either \ref MaxWeightedPerfectMatching::run() "algorithm.run()" 
-      /// or \ref MaxWeightedPerfectMatching::start() "algorithm.start()" 
+      /// \pre Either \ref MaxWeightedPerfectMatching::run() "algorithm.run()"
+      /// or \ref MaxWeightedPerfectMatching::start() "algorithm.start()"
       /// must be called before initializing this iterator.
       BlossomIt(const MaxWeightedPerfectMatching& algorithm, int variable)
         : _algorithm(&algorithm)

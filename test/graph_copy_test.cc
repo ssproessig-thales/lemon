@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -70,7 +70,7 @@ void digraph_copy_test() {
     nodeRef(nr).arcRef(er).
     nodeCrossRef(ncr).arcCrossRef(ecr).
     node(fn, tn).arc(fa, ta).run();
-  
+
   check(countNodes(from) == countNodes(to), "Wrong copy.");
   check(countArcs(from) == countArcs(to), "Wrong copy.");
 
@@ -98,7 +98,7 @@ void digraph_copy_test() {
 
   // Test repeated copy
   digraphCopy(from, to).run();
-  
+
   check(countNodes(from) == countNodes(to), "Wrong copy.");
   check(countArcs(from) == countArcs(to), "Wrong copy.");
 }
@@ -200,7 +200,7 @@ void graph_copy_test() {
 
   // Test repeated copy
   graphCopy(from, to).run();
-  
+
   check(countNodes(from) == countNodes(to), "Wrong copy.");
   check(countEdges(from) == countEdges(to), "Wrong copy.");
   check(countArcs(from) == countArcs(to), "Wrong copy.");

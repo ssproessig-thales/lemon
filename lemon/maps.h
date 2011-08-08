@@ -2,7 +2,7 @@
  *
  * This file is a part of LEMON, a generic C++ optimization library.
  *
- * Copyright (C) 2003-2009
+ * Copyright (C) 2003-2011
  * Egervary Jeno Kombinatorikus Optimalizalasi Kutatocsoport
  * (Egervary Research Group on Combinatorial Optimization, EGRES).
  *
@@ -1818,7 +1818,7 @@ namespace lemon {
   /// \brief Provides an immutable and unique id for each item in a graph.
   ///
   /// IdMap provides a unique and immutable id for each item of the
-  /// same type (\c Node, \c Arc or \c Edge) in a graph. This id is 
+  /// same type (\c Node, \c Arc or \c Edge) in a graph. This id is
   ///  - \b unique: different items get different ids,
   ///  - \b immutable: the id of an item does not change (even if you
   ///    delete other nodes).
@@ -2273,7 +2273,7 @@ namespace lemon {
     }
 
     /// \brief Gives back the item belonging to a \e RangeId
-    /// 
+    ///
     /// Gives back the item belonging to a \e RangeId.
     Item operator()(int id) const {
       return _inv_map[id];
@@ -2499,7 +2499,7 @@ namespace lemon {
   /// in constant time. On the other hand, the values are updated automatically
   /// whenever the digraph changes.
   ///
-  /// \warning Besides \c addNode() and \c addArc(), a digraph structure 
+  /// \warning Besides \c addNode() and \c addArc(), a digraph structure
   /// may provide alternative ways to modify the digraph.
   /// The correct behavior of InDegMap is not guarantied if these additional
   /// features are used. For example the functions
@@ -2515,7 +2515,7 @@ namespace lemon {
       ::ItemNotifier::ObserverBase {
 
   public:
-    
+
     /// The graph type of InDegMap
     typedef GR Graph;
     typedef GR Digraph;
@@ -2629,7 +2629,7 @@ namespace lemon {
   /// in constant time. On the other hand, the values are updated automatically
   /// whenever the digraph changes.
   ///
-  /// \warning Besides \c addNode() and \c addArc(), a digraph structure 
+  /// \warning Besides \c addNode() and \c addArc(), a digraph structure
   /// may provide alternative ways to modify the digraph.
   /// The correct behavior of OutDegMap is not guarantied if these additional
   /// features are used. For example the functions
