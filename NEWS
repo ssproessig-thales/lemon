@@ -1,3 +1,11 @@
+2011-11-09 Version 1.1.5 released
+
+        Bugfix release.
+
+        #428: Add missing lemon/lemon.pc.cmake to the release tarball
+        #429: Fix VS warnings
+        #430: Fix LpBase::Constr two-side limit bug
+
 2011-08-08 Version 1.1.4 released
 
         Bugfix release.
