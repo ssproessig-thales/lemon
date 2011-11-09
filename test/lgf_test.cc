@@ -117,7 +117,7 @@ int main()
       digraphReader(d, input).
         run();
     }
-    catch (FormatError&) 
+    catch (FormatError&)
       {
         ok = true;
       }
