@@ -1377,9 +1377,10 @@ void checkCombiningAdaptors() {
   dir_map[graph.down(n4)] = graph.u(graph.down(n4)) != n4;
 
   // Apply several adaptors on the grid graph
-  typedef SplitNodes< ReverseDigraph< const Orienter<
-            const GridGraph, GridGraph::EdgeMap<bool> > > >
-    RevSplitGridGraph;
+  typedef Orienter<const GridGraph, GridGraph::EdgeMap<bool> >
+    OrientedGridGraph;
+  typedef ReverseDigraph<const OrientedGridGraph> RevOrientedGridGraph;
+  typedef SplitNodes<RevOrientedGridGraph> RevSplitGridGraph;
   typedef ReverseDigraph<const RevSplitGridGraph> SplitGridGraph;
   typedef Undirector<const SplitGridGraph> USplitGridGraph;
   typedef Undirector<const USplitGridGraph> UUSplitGridGraph;
@@ -1388,8 +1389,10 @@ void checkCombiningAdaptors() {
   checkConcept<concepts::Graph, USplitGridGraph>();
   checkConcept<concepts::Graph, UUSplitGridGraph>();
 
+  OrientedGridGraph ori_adaptor = orienter(graph, dir_map);
+  RevOrientedGridGraph rev_ori_adaptor = reverseDigraph(ori_adaptor);
   RevSplitGridGraph rev_adaptor =
-    splitNodes(reverseDigraph(orienter(graph, dir_map)));
+    splitNodes(rev_ori_adaptor);
   SplitGridGraph adaptor = reverseDigraph(rev_adaptor);
   USplitGridGraph uadaptor = undirector(adaptor);
   UUSplitGridGraph uuadaptor = undirector(uadaptor);
