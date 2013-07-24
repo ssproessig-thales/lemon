@@ -19,6 +19,7 @@
         #461: Bugfix in assert.h
         #470: Fix compilation issues related to various gcc versions
         #439: Bugfix in biNodeConnected()
+        #469: Bugfix in test/maps_test.cc
 
 2011-11-09 Version 1.2.3 released
 
