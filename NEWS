@@ -1,3 +1,25 @@
+2013-08-10 Version 1.2.4 released
+
+        Bugfix release.
+
+        #432: Add missing doc/template.h and doc/references.bib to release
+              tarball
+        #433: Support shared library build
+        ----: Update CPLEX lookup
+        ----: Make CBC interface compatible with latest CBC releases
+        ----: Intel C++ compatibility fixes
+        #441: Fix buggy reinitialization in _solver_bits::VarIndex::clear()
+        #444: Bugfix in path copy constructors and assignment operators
+        #447: Bugfix in AllArcLookUp<>
+        #448: Bugfix in adaptor_test.cc
+        #449: Fix clang compilation warnings and errors
+        #440: Fix a bug + remove redundant typedefs in dimacs-solver
+        #453: Avoid GCC 4.7 compiler warnings
+        #445: Fix missing initialization in CplexEnv::CplexEnv()
+        #461: Bugfix in assert.h
+        #470: Fix compilation issues related to various gcc versions
+        #439: Bugfix in biNodeConnected()
+
 2011-11-09 Version 1.2.3 released
 
         Bugfix release.
