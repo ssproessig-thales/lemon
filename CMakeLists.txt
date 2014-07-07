@@ -1,5 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
+CMAKE_POLICY(SET CMP0048 OLD)
+
 SET(PROJECT_NAME "LEMON")
 PROJECT(${PROJECT_NAME})
 
@@ -186,11 +188,11 @@ ELSE()
     "Flags used by the C compiler during maintainer builds."
     )
   SET( CMAKE_EXE_LINKER_FLAGS_MAINTAINER
-    "-Wl,--warn-unresolved-symbols,--warn-once" CACHE STRING
+    "${CMAKE_EXE_LINKER_FLAGS_DEBUG}" CACHE STRING
     "Flags used for linking binaries during maintainer builds."
     )
   SET( CMAKE_SHARED_LINKER_FLAGS_MAINTAINER
-    "-Wl,--warn-unresolved-symbols,--warn-once" CACHE STRING
+    "${CMAKE_SHARED_LINKER_FLAGS_DEBUG}" CACHE STRING
     "Flags used by the shared libraries linker during maintainer builds."
     )
 ENDIF()
