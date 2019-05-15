@@ -1209,7 +1209,7 @@ namespace lemon {
     ///
     ListGraph() {}
 
-    typedef Parent::OutArcIt IncEdgeIt;
+    typedef Parent::IncEdgeIt IncEdgeIt;
 
     /// \brief Add a new node to the graph.
     ///
